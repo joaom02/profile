@@ -119,6 +119,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         <div class="text-center text-lg-start mt-4 pt-2">
                                             <input type="submit" class="btn btn-primary" value="Login">
                                         </div>
+                                        <div class="text-center text-lg-start mt-4 pt-2">
+                                            <input type="cancel" class="btn btn-primary" value="Cancel">
+                                        </div>
                                     </form>
                                 </div>
                             </div>

@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty(trim($_POST["role"]))){
-        $username_err = "1 - Admin 2 - Manager";
+        $role_err = "1 - Admin 2 - Manager";
     } 
     elseif(trim($_POST["role"]) != 1 && trim($_POST["role"]) != 2){
         $role_err = "Role doesn't exist!";
@@ -141,7 +141,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                                         <!-- Role input -->
                                         <div class="form-outline mb-3">
-                                            <input type="text" name="role" class="form-control form-control-lg" <?php echo (!empty($role_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $role; ?>">
+                                            <input type="text" name="role" placeholder="1 - Admin 2 - Manager" class="form-control form-control-lg" <?php echo (!empty($role_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $role; ?>">
                                             <span class="invalid-feedback"><?php echo $role_err; ?></span>
                                             <label class="form-label" for="form3Example4">Select Role</label>
                                         </div>
