@@ -13,7 +13,7 @@ if (!empty($_POST)) {
     $name = isset($_POST['name']) ? $_POST['name'] : '';
     $level = isset($_POST['level']) ? $_POST['level'] : '';
     // Insert new record into the languages table
-    $stmt = $pdo->prepare('INSERT INTO languages VALUES (?, ?, ?)');
+    $stmt = $pdo->prepare('INSERT INTO skills VALUES (?, ?, ?)');
     $stmt->execute([$id, $name, $level]);
     // Output message
     $msg = 'Created Successfully!';
@@ -26,7 +26,7 @@ if (!empty($_POST)) {
 	<h2>Create language</h2>
     <form action="create.php" method="post">
         <label for="name">Name</label>
-        <input type="text" name="name" placeholder="Portuguese" id="name">
+        <input type="text" name="name" placeholder="JavaScript" id="name">
         <label for="level">Level</label>
         <input type="text" name="level" placeholder="Very good!" id="level">
         <input type="submit" value="Create">

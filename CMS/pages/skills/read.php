@@ -10,27 +10,27 @@ $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] :
 $records_per_page = 20;
 
 // Prepare the SQL statement and get records from our languages table, LIMIT will determine the page
-$stmt = $pdo->prepare('SELECT * FROM languages ORDER BY id LIMIT :current_page, :record_per_page');
+$stmt = $pdo->prepare('SELECT * FROM skills ORDER BY id LIMIT :current_page, :record_per_page');
 $stmt->bindValue(':current_page', ($page-1)*$records_per_page, PDO::PARAM_INT);
 $stmt->bindValue(':record_per_page', $records_per_page, PDO::PARAM_INT);
 $stmt->execute();
 // Fetch the records so we can display them in our template.
-$languages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$skills = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Get the total number of languages, this is so we can determine whether there should be a next and previous button
-$num_languages = $pdo->query('SELECT COUNT(*) FROM languages')->fetchColumn();
+$num_skills = $pdo->query('SELECT COUNT(*) FROM skills')->fetchColumn();
 ?>
 
 <?=template_header('Read')?>
 
 <div class="content read">
-	<h2>Languages</h2>
-	<p><a href="create.php" class="create-language">Create Language</a></p>
+	<h2>Skills</h2>
+	<p><a href="create.php" class="create-language">Create skill</a></p>
     <form name="form" action="update.php" method="get">
-        <input type="text" name="id" id="id" placeholder="Update Language">
+        <input type="text" name="id" id="id" placeholder="Update skill">
     </form>
     <form name="form" action="delete.php" method="get">
-        <input type="text" name="id" id="id" placeholder="Delete Language">
+        <input type="text" name="id" id="id" placeholder="Delete skill">
     </form>
 	<table>
         <thead>
@@ -42,14 +42,14 @@ $num_languages = $pdo->query('SELECT COUNT(*) FROM languages')->fetchColumn();
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($languages as $language): ?>
+            <?php foreach ($skills as $skill): ?>
             <tr>
-                <td><?=$language['id']?></td>
-                <td><?=$language['name']?></td>
-                <td><?=$language['level']?></td>
+                <td><?=$skill['id']?></td>
+                <td><?=$skill['name']?></td>
+                <td><?=$skill['level']?></td>
                 <td class="actions">
-                    <a href="update.php?id=<?=$language['id']?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
-                    <a href="delete.php?id=<?=$language['id']?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
+                    <a href="update.php?id=<?=$skill['id']?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
+                    <a href="delete.php?id=<?=$skill['id']?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -59,7 +59,7 @@ $num_languages = $pdo->query('SELECT COUNT(*) FROM languages')->fetchColumn();
 		<?php if ($page > 1): ?>
 		<a href="read.php?page=<?=$page-1?>"><i class="fas fa-angle-double-left fa-sm"></i></a>
 		<?php endif; ?>
-		<?php if ($page*$records_per_page < $num_languages): ?>
+		<?php if ($page*$records_per_page < $num_skills): ?>
 		<a href="read.php?page=<?=$page+1?>"><i class="fas fa-angle-double-right fa-sm"></i></a>
 		<?php endif; ?>
 	</div>
