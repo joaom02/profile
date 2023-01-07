@@ -26,12 +26,6 @@ $num_skills = $pdo->query('SELECT COUNT(*) FROM skills')->fetchColumn();
 <div class="content read">
 	<h2>Skills</h2>
 	<p><a href="create.php" class="create-language">Create skill</a></p>
-    <form name="form" action="update.php" method="get">
-        <input type="text" name="id" id="id" placeholder="Update skill">
-    </form>
-    <form name="form" action="delete.php" method="get">
-        <input type="text" name="id" id="id" placeholder="Delete skill">
-    </form>
 	<table>
         <thead>
             <tr>

@@ -14,18 +14,19 @@ function template_header($title) {
 if($id_role == 1){
 	echo <<<EOT
 	<!DOCTYPE html>
-	<html>
+	<html lang="en">
 		<head>
-			<meta charset="utf-8">
+			<meta charset="UTF-8">
 			<title>My CMS</title>
-			<link href="/sir-crud/style.css" rel="stylesheet" type="text/css">
+			<link rel="stylesheet" href="../../style.css">
 		</head>
 		<body>
 		<nav class="navtop">
 			<div>
 				<h1>Hello $username</h1>
-				<p><a href="../roles/admin.php">Return to Admin Page</a></p>
+				<p><a href="../../pages/dashboard/welcome.php">Return to Admin Page</a></p>
 				<p><a href="../../auth/logout.php">Logout</a></p>
+				<p><a href="../../../profile-html/index.php">Main Page</a></p>
 			</div>
 		</nav>
 	EOT;
@@ -33,18 +34,19 @@ if($id_role == 1){
 elseif($id_role == 2){
 	echo <<<EOT
 	<!DOCTYPE html>
-	<html>
+	<html lang="en">
 		<head>
-			<meta charset="utf-8">
+			<meta charset="UTF-8">
 			<title>My CMS</title>
-			<link href="/sir-crud/style.css" rel="stylesheet" type="text/css">
+			<link rel="stylesheet" href="../../style.css">
 		</head>
 		<body>
 		<nav class="navtop">
 			<div>
 				<h1>Hello $username</h1>
-				<p><a href="../roles/manager.php">Return to Manager Page</a></p>
+				<p><a href="../form/read.php">Return to Manager Page</a></p>
 				<p><a href="../../auth/logout.php">Logout</a></p>
+				<p><a href="../../../profile-html/index.php">Main Page</a></p>
 			</div>
 		</nav>
 	EOT;

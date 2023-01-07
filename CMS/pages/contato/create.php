@@ -10,10 +10,10 @@ if (!empty($_POST)) {
     // Set-up the variables that are going to be inserted, we must check if the POST variables exist if not we can default them to blank
     $id = isset($_POST['id']) && !empty($_POST['id']) && $_POST['id'] != 'auto' ? $_POST['id'] : NULL;
     // Check if POST variable "name" exists, if not default the value to blank, basically the same for all variables
-    $texto = isset($_POST['texto']) ? $_POST['texto'] : '';
+    $contato = isset($_POST['contato']) ? $_POST['contato'] : '';
     // Insert new record into the languages table
-    $stmt = $pdo->prepare('INSERT INTO informacoes VALUES (?, ?)');
-    $stmt->execute([$id, $texto]);
+    $stmt = $pdo->prepare('INSERT INTO contato VALUES (?, ?)');
+    $stmt->execute([$id, $contato]);
     // Output message
     $msg = 'Created Successfully!';
 }
@@ -22,11 +22,10 @@ if (!empty($_POST)) {
 <?=template_header('Create')?>
 
 <div class="content update">
-	<h2>Create language</h2>
+	<h2>Create contato</h2>
     <form action="create.php" method="post">
-        <label for="name">Texto</label>
-        <textarea name="texto" placeholder="Informação" id="texto"></textarea>
-        <input type="submit" value="Create">
+        <label for="contato">Name</label>
+        <input type="text" name="contato" placeholder="Contato" id="contato">
     </form>
     <?php if ($msg): ?>
     <p><?=$msg?></p>

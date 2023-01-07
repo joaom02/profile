@@ -26,18 +26,11 @@ $num_informacoes = $pdo->query('SELECT COUNT(*) FROM informacoes')->fetchColumn(
 <div class="content read">
 	<h2>Languages</h2>
 	<p><a href="create.php" class="create-language">Create Language</a></p>
-    <form name="form" action="update.php" method="get">
-        <input type="text" name="id" id="id" placeholder="Update Language">
-    </form>
-    <form name="form" action="delete.php" method="get">
-        <input type="text" name="id" id="id" placeholder="Delete Language">
-    </form>
 	<table>
         <thead>
             <tr>
                 <td>#</td>
                 <td>Name</td>
-                <td>Level</td>
                 <td></td>
             </tr>
         </thead>
