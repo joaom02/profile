@@ -23,7 +23,7 @@ if (!empty($_POST)) {
 <?=template_header('Create')?>
 
 <div class="content update">
-	<h2>Create language</h2>
+	<h2>Create skill</h2>
     <form action="create.php" method="post">
         <label for="name">Name</label>
         <input type="text" name="name" placeholder="JavaScript" id="name">

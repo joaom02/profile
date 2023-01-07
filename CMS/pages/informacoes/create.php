@@ -22,7 +22,7 @@ if (!empty($_POST)) {
 <?=template_header('Create')?>
 
 <div class="content update">
-	<h2>Create language</h2>
+	<h2>Create Informação</h2>
     <form action="create.php" method="post">
         <label for="name">Texto</label>
         <textarea name="texto" placeholder="Informação" id="texto"></textarea>

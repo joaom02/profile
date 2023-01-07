@@ -34,7 +34,7 @@ if (isset($_GET['id'])) {
 <?=template_header('Delete')?>
 
 <div class="content delete">
-	<h2>Delete language #<?=$informacao['id']?></h2>
+	<h2>Delete Informação #<?=$informacao['id']?></h2>
     <?php if ($msg): ?>
     <p><?=$msg?></p>
     <?php else: ?>

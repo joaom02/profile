@@ -11,6 +11,7 @@
         <p><a href="../informacoes/read.php">Editar Informações</a></p>
         <p><a href="../contato/read.php">Editar Contatos</a></p>
         <p><a href="../form/read.php">Ler Mensagens</a></p>
+        <p><a href="../../utils/conta.html">Calcular Salário</a></p>
     </div>';
     }elseif($id_role == 2){
         $role = "Manager";

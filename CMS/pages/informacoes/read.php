@@ -24,8 +24,8 @@ $num_informacoes = $pdo->query('SELECT COUNT(*) FROM informacoes')->fetchColumn(
 <?=template_header('Read')?>
 
 <div class="content read">
-	<h2>Languages</h2>
-	<p><a href="create.php" class="create-language">Create Language</a></p>
+	<h2>Informações</h2>
+	<p><a href="create.php" class="create-language">Create Informação</a></p>
 	<table>
         <thead>
             <tr>

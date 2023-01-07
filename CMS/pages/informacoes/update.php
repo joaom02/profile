@@ -31,7 +31,7 @@ if (isset($_GET['id'])) {
 <?=template_header('Read')?>
 
 <div class="content update">
-	<h2>Update language #<?=$informacao['id']?></h2>
+	<h2>Update Informação #<?=$informacao['id']?></h2>
     <form action="update.php?id=<?=$informacao['id']?>" method="post">
         <label for="id">ID</label>        
         <input type="text" name="id" placeholder="1" value="<?=$informacao['id']?>" id="id">
