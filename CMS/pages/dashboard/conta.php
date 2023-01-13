@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script src="script.js"></script>
-    <title>Document</title>
-</head>
+<?php
+require "../../utils/functions.php";
+?>
+
+<?=template_header('Create')?>
+
+<script src="script.js"></script>
+
 <body>
 <label for="base_salary">Base Salary</label>
 <input type="number" id="base_salary" placeholder="Enter Base Salary" required/>
@@ -49,6 +48,4 @@
 <p>SS tax: <span id="descontos_ss"></span></p>
 <p>Your net salary is: <span id="net_salary"></span></p>
 
-<p><a href="../pages/dashboard/welcome.php">Volta a Página Inicial</a></p>
-</body>
-</html>
+<?=template_footer()?>
